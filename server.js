@@ -7,6 +7,8 @@ connectDB();
 
 const app = express();
 
+const authRouter = require('./routes/authRoutes');
+const academyauthRouter = require('./routes/academyauthRoutes');
 // Middleware
 // app.use(cors());
 const corsOptions = {
@@ -25,7 +27,7 @@ app.use(express.json()); // Parse JSON bodies
 
 
 app.use((req, res, next) => {
-    console.log(`Received ${req.method} request for ${req.url}`);
+    console.log(`Received ${req.method} request for ${req.url} \n     req body ${JSON.stringify(req.body)}`);
     next();
   });
 // Test route
@@ -33,6 +35,10 @@ app.get("/", (req, res) => {
 //   res.send("Hello from the backend!");
   res.status(200).json({ message: "Hello from the backend!"});
 });
+
+
+app.use("/auth/user", authRouter);
+app.use("/auth/academy", academyauthRouter);
 
 
 // Start the server
