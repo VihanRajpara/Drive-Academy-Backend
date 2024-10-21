@@ -7,7 +7,7 @@ connectDB();
 
 const app = express();
 
-const authRouter = require('./routes/authRoutes');
+const authRouter = require('./routes/userauthRoutes');
 const academyauthRouter = require('./routes/academyauthRoutes');
 // Middleware
 // app.use(cors());
