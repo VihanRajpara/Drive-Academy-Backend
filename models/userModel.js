@@ -12,9 +12,9 @@ const userSchema = new Schema(
       type: String,
       required: [true , "Academy is required"]
     },
-    username: {
+    email: {
       type: String,
-      required: [true, "Username is required"],
+      required: [true, "Email is required"],
       unique: true,
     },
     password: {
