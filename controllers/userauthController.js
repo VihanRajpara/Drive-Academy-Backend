@@ -73,7 +73,7 @@ const loginUser = async (req, res) => {
 
     // If the user exists and the password is correct, generate a token
     res.status(200).json({
-      _id: user._id,
+      id: user._id,
       email: user.email,
       academy: user.academy,
       token: `vihan ${generateToken({id:user._id,email:user.email,academy:user.academy,userCode:`${user.academy}${user._id}`})}`, // Assuming you still want to use the email for token generation
