@@ -72,7 +72,7 @@ const loginUser = async (req, res) => {
     }
 
     // If the user exists and the password is correct, generate a token
-    res.status(200).json({
+    return res.status(200).json({
       id: user._id,
       email: user.email,
       academy: user.academy,
@@ -89,12 +89,14 @@ const loginUser = async (req, res) => {
 const getCurrentuser = async (req, res)=>{
   const user = req.user;
   console.table(user);
-  res.status(200).json({
-    _id: user._id,
-    email: user.email,
-    academy: user.academy,
-    // message:user.data,
-  });
+  const resuser = {
+    id: user.data.id,
+    email: user.data.email,
+    academy: user.data.academy,
+    userCode:user.data.userCode,
+    message: "done",
+  };
+  return res.status(200).json(resuser);
 }
 
 
