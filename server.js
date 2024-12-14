@@ -12,7 +12,7 @@ const academyauthRouter = require('./routes/academyauthRoutes');
 // Middleware
 // app.use(cors());
 const corsOptions = {
-    origin: '/*', // Allow all origins
+    origin: '*', // Allow all origins
     credentials: true,
     optionSuccessStatus: 200,
   };
